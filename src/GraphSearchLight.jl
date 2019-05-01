@@ -9,6 +9,7 @@ export SearchNode
 include("search_node.jl")
 # Implementations of some graphs search algorithms.
 export
+    InfeasibleSearchProblemError,
     generic_graph_search,
     astar_search,
     weighted_astar_search
