@@ -6,7 +6,7 @@ A lightweight graph search library.
 For Julia 1.0 and above simply run:
 ```julia
 using Pkg
-Pkg.add("https://github.com/lassepe/GraphSearchLight.jl")
+Pkg.add(PackageSpec(url="https://github.com/lassepe/GraphSearchLight.jl"))
 ```
 
 ## Usage
