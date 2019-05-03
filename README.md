@@ -1,24 +1,24 @@
-# GraphSearchLight.jl
+# GraphSearchZero.jl
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://travis-ci.org/lassepe/GraphSearchLight.jl.svg?branch=master)](https://travis-ci.org/lassepe/GraphSearchLight.jl)
-[![Coverage Status](https://coveralls.io/repos/github/lassepe/GraphSearchLight.jl/badge.svg?branch=master)](https://coveralls.io/github/lassepe/GraphSearchLight.jl?branch=master)
+[![Build Status](https://travis-ci.org/lassepe/GraphSearchZero.jl.svg?branch=master)](https://travis-ci.org/lassepe/GraphSearchZero.jl)
+[![Coverage Status](https://coveralls.io/repos/github/lassepe/GraphSearchZero.jl/badge.svg?branch=master)](https://coveralls.io/github/lassepe/GraphSearchZero.jl?branch=master)
 
 ## Installation
 
 For Julia 1.0 and above simply run:
 ```julia
 using Pkg
-Pkg.add(PackageSpec(url="https://github.com/lassepe/GraphSearchLight.jl"))
+Pkg.add(PackageSpec(url="https://github.com/lassepe/GraphSearchZero.jl"))
 ```
 
 ## Usage
 
-A simple example of how to use this can be found in [test/test_search.jl](https://github.com/lassepe/GraphSearchLight.jl/blob/master/test/test_search.jl_).
+A simple example of how to use this can be found in [test/test_search.jl](https://github.com/lassepe/GraphSearchZero.jl/blob/master/test/test_search.jl_).
 This defines a simple grid world problem with obstacles with some cells being occupied by obstacles.
 
 ### Defining a `SearchProblem`
 
-As you can see from this example, all you need to do is impelement the `SearchProblem` interface defined in [src/problem_interface.jl](https://github.com/lassepe/GraphSearchLight.jl/blob/master/src/problem_interface.jl).
+As you can see from this example, all you need to do is implement the `SearchProblem` interface defined in [src/problem_interface.jl](https://github.com/lassepe/GraphSearchZero.jl/blob/master/src/problem_interface.jl).
 That is, you need to define a structure that inherits from `SearchProblem{S,A`}, where `S` is the state type and `A` is the action type.
 
 ```julia
@@ -59,8 +59,8 @@ function successors end
 
 ### Solving the Search Problem
 
-Onc eyou have specified your search problem, finding a solution to this problem is as simple as calling one of the solvers.
+Once you have specified your search problem, finding a solution to this problem is as simple as calling one of the solvers.
 Currently, `generic_graph_search`, `weighted_astar` and `astar` are provided. The generic graph search method is provided that computes the solution given a `p::SearchProblem` and a `fringe_priority::Function`.
 Here, the `fringe_priority` is a function that maps a `SearchNode{S, A}` to a scalar priority. The algorithm will expand nodes with a *low* priority first.
-In order to use A*, the user simply needs to provide the `heuristic::Function` that maps a state `s::S` to a scalar cost to go upperbound.
+In order to use A*, the user simply needs to provide the `heuristic::Function` that maps a state `s::S` to a scalar cost to go upper bound.
 A* will simply call generic graph search with the fringe priority mapping constructed from the heuristic.

@@ -1,5 +1,5 @@
 using Test
-using GraphSearchLight
+using GraphSearchZero
 
 macro testblock(ex)
     quote

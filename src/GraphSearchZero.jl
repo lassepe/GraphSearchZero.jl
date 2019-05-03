@@ -1,4 +1,4 @@
-module GraphSearchLight
+module GraphSearchZero
 using DataStructures
 
 export SearchProblem

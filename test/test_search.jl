@@ -22,11 +22,11 @@ apply_action(s::GridPosition, a::GridAction) = GridPosition(s.x_idx + a.dx, s.y_
     _n_expanded::Int = 0
 end
 
-GraphSearchLight.start_state(p::GridNavigationProblem) = GridPosition(1, 1)
-GraphSearchLight.is_goal_state(p::GridNavigationProblem, s::GridPosition) = s == GridPosition(p.grid_dimensions...)
+GraphSearchZero.start_state(p::GridNavigationProblem) = GridPosition(1, 1)
+GraphSearchZero.is_goal_state(p::GridNavigationProblem, s::GridPosition) = s == GridPosition(p.grid_dimensions...)
 on_grid(p::GridNavigationProblem, s::GridPosition) = (1 <= s.x_idx <= p.grid_dimensions[1]) && (1 <= s.y_idx <= p.grid_dimensions[2])
 
-function GraphSearchLight.successors(p::GridNavigationProblem, s::GridPosition)
+function GraphSearchZero.successors(p::GridNavigationProblem, s::GridPosition)
     p._n_expanded += 1
     successors::Vector{Tuple{GridPosition, GridAction, Int}} = []
     sizehint!(successors, length(p.aspace))
@@ -79,8 +79,8 @@ end
             @test @testblock quote
                 pp = deepcopy(p)
                 a = rand(pp.aspace)
-                n = GraphSearchLight.root_node(pp)
-                @inferred GraphSearchLight.expand(n, pp)
+                n = GraphSearchZero.root_node(pp)
+                @inferred GraphSearchZero.expand(n, pp)
             end
         end
     end
