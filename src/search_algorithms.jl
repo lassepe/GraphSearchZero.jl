@@ -17,7 +17,7 @@ function generic_graph_search(p::SearchProblem, fringe_priority::Function)
         current_search_node = dequeue!(fringe)
         # We have found a path to the goal state
         if is_goal_state(p, leaf_state(current_search_node))
-            return action_sequence(current_search_node), state_sequence(current_search_node)
+            return action_sequence(current_search_node), state_sequence(current_search_node), cost(current_search_node)
         elseif !(leaf_state(current_search_node) in closed_set)
             # make sure we don't explore this state again
             push!(closed_set, leaf_state(current_search_node))
