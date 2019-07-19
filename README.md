@@ -64,5 +64,5 @@ function successors end
 Once you have specified your search problem, finding a solution to this problem is as simple as calling one of the solvers.
 Currently, `generic_graph_search`, `weighted_astar` and `astar` are provided. The generic graph search method is provided that computes the solution given a `p::SearchProblem` and a `fringe_priority::Function`.
 Here, the `fringe_priority` is a function that maps a `SearchNode{S, A}` to a scalar priority. The algorithm will expand nodes with a *low* priority first.
-In order to use A*, the user simply needs to provide the `heuristic::Function` that maps a state `s::S` to a scalar cost to go upper bound.
-A* will simply call generic graph search with the fringe priority mapping constructed from the heuristic.
+In order to use A* (`astar`), the user simply needs to provide a `heuristic::Function` that maps a state `s::S` to a scalar cost-to-go lower bound. Basically, `astar` is a convenience wrapper that calls `generic_graph_search` with the fringe priority mapping constructed from the `heuristic`.
+`weighted_astar` uses a [bounded relaxation](https://en.wikipedia.org/wiki/A*_search_algorithm#Bounded_relaxation) of the search problem to find a solution with an ε-environment of the optimal cost.
