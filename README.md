@@ -4,7 +4,10 @@
 [![Coverage Status](https://coveralls.io/repos/github/lassepe/GraphSearchZero.jl/badge.svg?branch=master)](https://coveralls.io/github/lassepe/GraphSearchZero.jl?branch=master)
 [![codecov](https://codecov.io/gh/lassepe/GraphSearchZero.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/lassepe/GraphSearchZero.jl)
 
-**Notice:** This package uses some Julia 1.1 features and requires minor modifications to be used with older versions of Julia (mainly replace calls of `isnothing`).
+**Note:** If you are looking for a graph search implementation for one of your projects, you probably want to use a more mature and actively developed graph search library, e.g. [LightGraphs.jl](https://github.com/JuliaGraphs/LightGraphs.jl).
+
+The main motivation behind creating this package was to get some experience with Julia package development and performance tuning at the example of a light-weight graph search implementation that I needed for one of my research projects.
+While I still occasionally update this repository, it is mainly to try out new features (e.g. GitHub Actions, CI, documentation building).
 
 ## Installation
 
