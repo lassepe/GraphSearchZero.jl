@@ -17,13 +17,13 @@ Pkg.add(PackageSpec(url="https://github.com/lassepe/GraphSearchZero.jl"))
 
 ## Usage
 
-A simple example of how to use this can be found in [test/test_search.jl](https://github.com/lassepe/GraphSearchZero.jl/blob/master/test/test_search.jl_).
+A simple example of how to use this can be found in [`test/test_search.jl`](test/test_search.jl).
 This defines a simple grid world problem with obstacles with some cells being occupied by obstacles.
 
 ### Defining a `SearchProblem`
 
-As you can see from this example, all you need to do is implement the `SearchProblem` interface defined in [src/problem_interface.jl](https://github.com/lassepe/GraphSearchZero.jl/blob/master/src/problem_interface.jl).
-That is, you need to define a structure that inherits from `SearchProblem{S,A`}, where `S` is the state type and `A` is the action type.
+As you can see from this example, all you need to do is implement the `SearchProblem` interface defined in [`src/problem_interface.jl`](src/problem_interface.jl).
+That is, you need to define a structure that inherits from `SearchProblem{S,A}`, where `S` is the state type and `A` is the action type.
 
 ```julia
 """
