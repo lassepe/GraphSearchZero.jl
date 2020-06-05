@@ -1,7 +1,5 @@
 # GraphSearchZero.jl
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://travis-ci.org/lassepe/GraphSearchZero.jl.svg?branch=master)](https://travis-ci.org/lassepe/GraphSearchZero.jl)
-[![Coverage Status](https://coveralls.io/repos/github/lassepe/GraphSearchZero.jl/badge.svg?branch=master)](https://coveralls.io/github/lassepe/GraphSearchZero.jl?branch=master)
+![build](https://github.com/lassepe/GraphSearchZero.jl/workflows/build/badge.svg)
 [![codecov](https://codecov.io/gh/lassepe/GraphSearchZero.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/lassepe/GraphSearchZero.jl)
 
 **Note:** If you are looking for a graph search implementation for one of your projects, you probably want to use a more mature and actively developed graph search library, e.g. [LightGraphs.jl](https://github.com/JuliaGraphs/LightGraphs.jl).
