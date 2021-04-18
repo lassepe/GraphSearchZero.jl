@@ -60,7 +60,7 @@ depth(n::SearchNode) = n.depth
 
 Computes a fast hash for a search node.
 """
-Base.hash(n::SearchNode) = n.id
+Base.hash(n::SearchNode, h::UInt) = n.id ⊻ h
 """
     Base.:==
 
